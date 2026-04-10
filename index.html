@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Преподаватель Вайбкодинга | Обучение AI и NoCode</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 80px 0;
+            text-align: center;
+            border-radius: 20px;
+            margin: 40px 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: #667eea;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+        }
+
+        /* About Section */
+        .about {
+            background: white;
+            padding: 80px 0;
+            margin: 40px 20px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            max-width: 600px;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            color: white;
+            min-width: 150px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Program Section */
+        .program {
+            background: white;
+            padding: 80px 0;
+            margin: 40px 20px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .program h2 {
+            font-size: 2.5rem;
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .modules {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .module {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .module:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+        }
+
+        .module-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .module h3 {
+            color: #333;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .module p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 80px 0;
+            margin: 40px 20px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .benefits h2 {
+            font-size: 2.5rem;
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-card {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .benefit-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .benefit-card p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: white;
+            padding: 80px 0;
+            margin: 40px 20px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 30px;
+        }
+
+        .contact p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            opacity: 0.9;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .modules {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>🚀 Преподаватель Вайбкодинга</h1>
+            <p class="subtitle">Обучение работе с AI и NoCode инструментами для бизнеса и менеджмента</p>
+            <p>Освойте современные технологии искусственного интеллекта и создавайте умных помощников без написания кода. Практическое обучение с реальными кейсами.</p>
+            <a href="#contact" class="cta-button">Записаться на курс</a>
+        </section>
+
+        <!-- About Section -->
+        <section class="about">
+            <h2>Обо мне</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Я преподаватель вайбкодинга — нового направления обучения, которое объединяет работу с искусственным интеллектом и NoCode инструментами для создания эффективных бизнес-решений.</p>
+                    <p>Моя миссия — сделать передовые технологии доступными для предпринимателей, менеджеров и всех, кто хочет автоматизировать свои процессы без глубоких технических знаний.</p>
+                    <p>На курсе вы научитесь создавать умных ассистентов, чат-ботов, автоматизированные воронки и многое другое, используя мощь современных AI-платформ.</p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-number">12+</span>
+                            <span class="stat-label">Модулей</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Практики</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">NoCode</span>
+                            <span class="stat-label">Подход</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Program Section -->
+        <section class="program">
+            <h2>Программа обучения</h2>
+            <div class="modules">
+                <div class="module">
+                    <span class="module-number">1</span>
+                    <h3>Вводная лекция: AI для бизнеса и менеджмента</h3>
+                    <p>Текущий уровень развития AI, обзор нейронных сетей и бизнес-кейсов. Поймёте, как искусственный интеллект трансформирует современный бизнес.</p>
+                </div>
+
+                <div class="module">
+                    <span class="module-number">2</span>
+                    <h3>Промпт инжиниринг</h3>
+                    <p>Постановка задач в нейросети, тюнинг результатов, лайфхаки. Научитесь формулировать запросы для получения максимального качества от AI.</p>
+                </div>
+
+                <div class="module">
+                    <span class="module-number">3</span>
+                    <h3>NoCode инструменты Flowise</h3>
+                    <p>Создание агентов в ТГ-ботах. Создаём и запоминаем задачи через чат. Практическая работа с визуальным конструктором AI-агентов.</p>
+                </div>
+
+                <div class="module">
+                    <span class="module-number">4</span>
+                    <h3>NoCode для веб-интерфейсов</h3>
+                    <p>Создание профессиональных веб-интерфейсов без программирования. Быстрый запуск проектов и прототипов.</p>
+                </div>
+
+                <div class="module">
+                    <span class="module-number">5</span>
+                    <h3>NoCode платформа Replit: Агенты</h3>
+                    <p>Создание агентов-разметчиков данных, хранение истории сообщений в агентах. Работа с облачной средой разработки.</p>
+                </div>
+
+                <div class="module">
+                    <span class="module-number">6</span>
+                    <h3>RAG Ассистенты</h3>
+                    <p>Обработка файлов, ссылок и голосовых сообщений. Создание умных систем, работающих с вашими данными.</p>
+                </div>
+
+                <div class="module">
+                    <span class="module-number">7</span>
+                    <h3>Умные ИИ-Ассистенты</h3>
+                    <p>Обучение бота, векторные базы знаний, Ассистенты-консультанты. Продвинутые техники создания персональных помощников.</p>
+                </div>
+
+                <div class="module">
+                    <span class="module-number">8</span>
+                    <h3>Привлечение трафика</h3>
+                    <p>Лендинги, домены, аналитика воронки. Маркетинговые инструменты для продвижения ваших проектов.</p>
+                </div>
+
+                <div class="module">
+                    <span class="module-number">9</span>
+                    <h3>NoCode с n8n: Знакомство</h3>
+                    <p>Знакомство с платформой, создание простых Агентов. Автоматизация рабочих процессов без кода.</p>
+                </div>
+
+                <div class="module">
+                    <span class="module-number">10</span>
+                    <h3>NoCode с n8n: Продвинутое использование</h3>
+                    <p>Продвинутое использование платформы, подключение ботов в Телеграм. Сложные сценарии автоматизации.</p>
+                </div>
+
+                <div class="module">
+                    <span class="module-number">11</span>
+                    <h3>NoCode платформа Yandex AI Studio</h3>
+                    <p>Знакомство с платформой, создание агентов. Работа с экосистемой Яндекс для решения бизнес-задач.</p>
+                </div>
+
+                <div class="module">
+                    <span class="module-number">12</span>
+                    <h3>NoCode платформа Replit: Сайты</h3>
+                    <p>Создание сайтов, лендингов, страниц-визиток. Полный цикл разработки веб-проектов.</p>
+                </div>
+
+                <div class="module">
+                    <span class="module-number">13</span>
+                    <h3>Создание автоворонок</h3>
+                    <p>Автоматические коммуникации, телеграм-дайджесты, алёрты. Построение систем автоматического взаимодействия с клиентами.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits">
+            <h2>Что вы получите</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Практические навыки</h3>
+                    <p>Реальные проекты и кейсы, которые можно сразу применять в бизнесе</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Быстрый старт</h3>
+                    <p>NoCode подход позволяет создавать решения без месяцев обучения программированию</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🤖</div>
+                    <h3>AI-автоматизация</h3>
+                    <p>Научитесь создавать умных помощников для любых бизнес-задач</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📈</div>
+                    <h3>Рост эффективности</h3>
+                    <p>Автоматизируйте рутину и освободите время для важных задач</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <h2>Начните обучение сегодня</h2>
+            <p>Готовы освоить вайбкодинг и вывести свой бизнес на новый уровень? Свяжитесь со мной для записи на курс или получения дополнительной информации.</p>
+            <div class="contact-links">
+                <a href="mailto:info@vibecoding.ru" class="contact-link">📧 Написать письмо</a>
+                <a href="https://t.me/vibecoding" class="contact-link">✈️ Telegram</a>
+                <a href="tel:+79990000000" class="contact-link">📞 Позвонить</a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Преподаватель Вайбкодинга. Все права защищены.</p>
+        <p>Обучение AI и NoCode технологиям для бизнеса</p>
+    </footer>
+</body>
+</html>
